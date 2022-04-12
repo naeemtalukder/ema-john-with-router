@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import "./Login.css";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -16,6 +16,9 @@ const Login = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const handleEmailBlur = e => {
         setEmail(e.target.value);
     }
@@ -23,7 +26,7 @@ const Login = () => {
         setPassword(e.target.value);
     }
     if (user) {
-        navigate('/shop');
+        navigate(from, { replace: true });
     }
 
     const handleUserSingUp = event => {

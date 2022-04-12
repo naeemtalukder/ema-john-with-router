@@ -9,4 +9,16 @@
 8! useCreateUserWithEmailAndPassword react firebase hoocks
 9! if user create redairect to expatred pase 
 10! useCreateUserWithEmailAndPassword for sign in
+11! create RequerAuth component check user exsist also track
+12! In route wrap  RequerAuth
+*/
+
+
+/*
+* Firebase Hosting steps
+1! npm instal g-firebase tools
+2! firebase Login
+3! firebase init
+4! firebase deploy
+
 */
